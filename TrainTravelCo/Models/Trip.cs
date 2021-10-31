@@ -9,11 +9,17 @@ namespace TrainTravelCo.Models
     {
         public string Start { get; set; }
         public string Destination { get; set; }
-        
+
         public string DepartureTime { get; set; }
         public int trainId { get; set; }
-        public List<Booking> booking = new();
-
+        public int TripId { get; private set; }
+        public List<Booking> booking;
+        private static int _idCounter = 0;
+        public Trip()
+        {
+            this.TripId = _idCounter++;
+            booking = new List<Booking>();
+        }
 
 
     }

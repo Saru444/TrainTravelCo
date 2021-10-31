@@ -20,17 +20,15 @@ namespace TrainTravelCo.Controllers
         {
             _tripManager = new TripManager();
         }
-        [HttpPost]
+        [HttpPost("create")]
         public string Create(int trainId, string start, string destination, string departureTime)
         {
             return _tripManager.AddTrip(trainId, start, destination, departureTime);
         }
-        [HttpGet]
+        [HttpGet("list")]
         public List<Trip> GetTripList()
         {
-
             return _tripManager.GetAllTrips();
-
         }
 
     }

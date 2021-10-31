@@ -28,9 +28,7 @@ namespace TrainTravelCo.Controllers
         [HttpGet("list")]
         public List<Train> GetTrainList()
         {
-
-            return _trainManager.GetAllTrains();
-            
+            return _trainManager.GetAllTrains();           
         }
     }
 }

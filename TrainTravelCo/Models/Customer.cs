@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace TrainTravelCo.Models
 {
-    public class Booking
+    public class Customer
     {
-        public Customer Customer{ get; set; }
-        public Trip Trip { get; set; }
+        public string Name { get; set; }
+        public string Tel { get; set; }
     }
 }
