@@ -12,7 +12,6 @@ namespace TrainTravelCo.Managers
         DataStore dataStore = DataStore.Instance;
         public void CreateTrip(string start,string destination,string departureTime,int trainId)
         {
-            bool hasError = false;
             try
             {
                 var transList = dataStore.GetAllTrains().Find(x => x.Id == trainId);
@@ -27,20 +26,9 @@ namespace TrainTravelCo.Managers
             }
             catch(Exception)
             {
-                Console.WriteLine("Error!");
-                hasError = true;
+                throw;
             }
-            finally   //förstår hur may använder finally, men vet int om det passar här? eller ska man bara skriva try catch(Exception){throw;}
-            {
-                if(hasError)
-                {
-                    Console.WriteLine("Error!");
-                }
-                else
-                {
-                    Console.WriteLine("Done!");
-                }
-            }
+        
            
         }
     }

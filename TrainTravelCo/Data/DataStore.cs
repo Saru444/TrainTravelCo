@@ -25,15 +25,17 @@ namespace TrainTravelCo.Data
         }
         private DataStore()
         {
-            //_tripList.Add(new Train { RegNr = "Train-001", MaxCapacity = 25 });
-
-
+            _trainList.Add(new Train { RegNr = "Train-001", MaxCapacity = 20 });
+            _trainList.Add(new Train { RegNr = "Train-002", MaxCapacity = 45 });
+            _tripList.Add(new Trip { Start = "Hallsberg", Destination = "Stockholm", DepartureTime = "08:10", trainId = 0 });
+            _tripList.Add(new Trip { Start = "Göteborg", Destination = "örebro", DepartureTime = "13:30", trainId = 1 });
+            _tripList.Add(new Trip { Start = "Hallsberg", Destination = "Oslo", DepartureTime = "12:19", trainId = 3 });
 
 
         }
-        public void AddTrain(Train train)
+        public void AddTrain(Train newTrain)
         {
-            _trainList.Add(train);
+            _trainList.Add(newTrain);
         }
         public List<Train> GetAllTrains()
         {
