@@ -27,9 +27,9 @@ namespace TrainTravelCo.Data
         {
             _trainList.Add(new Train { RegNr = "Train-001", MaxCapacity = 20 });
             _trainList.Add(new Train { RegNr = "Train-002", MaxCapacity = 45 });
-            _tripList.Add(new Trip { Start = "Hallsberg", Destination = "Stockholm", DepartureTime = "08:10", trainId = 0 });
-            _tripList.Add(new Trip { Start = "Göteborg", Destination = "örebro", DepartureTime = "13:30", trainId = 1 });
-            _tripList.Add(new Trip { Start = "Hallsberg", Destination = "Oslo", DepartureTime = "12:19", trainId = 3 });
+            _tripList.Add(new Trip { Start = "Hallsberg", Destination = "Stockholm", DepartureTime = "08:10", TrainId = 0 });
+            _tripList.Add(new Trip { Start = "Göteborg", Destination = "örebro", DepartureTime = "13:30", TrainId = 1 });
+            _tripList.Add(new Trip { Start = "Hallsberg", Destination = "Oslo", DepartureTime = "12:19", TrainId = 3 });
 
 
         }

@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using TrainTravelCo.Models;
 using TrainTravelCo.Data;
-using TrainTravelCo.Models;
+using TrainTravelCo.Controllers;
+
 
 namespace TrainTravelCo.Managers
 {
@@ -20,12 +21,13 @@ namespace TrainTravelCo.Managers
         }
         public void BookTrip(int tripId, Customer customer)
         {
-            var tripList = dataStore.GetAllTrips().Find(x => x.TripId == tripId);
-            var booking = new Booking()
+            var trip = dataStore.GetAllTrips().Find(x => x.TripId == tripId);
+            Booking booking = new Booking()
             {
                 Customer = customer,
-                Trip = 
+                Trip = trip
             };
+            dataStore.AddTrip(trip);
 
         }
     }

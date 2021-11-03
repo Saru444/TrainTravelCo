@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TrainTravelCo.Managers;
 using TrainTravelCo.Models;
 using TrainTravelCo.Data;
+using TrainTravelCo.DTO;
 
 namespace TrainTravelCo.Controllers
 {
@@ -21,14 +22,24 @@ namespace TrainTravelCo.Controllers
             _tripManager = new TripManager();
         }
         [HttpPost("create")]
-        public string Create(int trainId, string start, string destination, string departureTime)
+        public Trip Create(TripDTo tripDto)
         {
-            return _tripManager.AddTrip(trainId, start, destination, departureTime);
+            string start = tripDto.Start;
+            string destination = tripDto.Destination;
+            string departureTime = tripDto.DepartureTime;
+            int trainId = tripDto.TrainId;
+            Trip trip= _tripManager.AddTrip(trainId, start, destination, departureTime);
+            return trip;
         }
         [HttpGet("list")]
-        public List<Trip> GetTripList()
+        public List<AvailabelTripDTO> GetTripList()
         {
-            return _tripManager.GetAllTrips();
+            List<Trip> trips= _tripManager.GetAllTrips();
+            List<AvailabelTripDTO> result = new();
+            foreach (var item in trips)
+            {
+
+            }
         }
 
     }

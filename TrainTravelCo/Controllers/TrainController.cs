@@ -20,12 +20,12 @@ namespace TrainTravelCo.Controllers
         {
             _trainManager = new TrainManager();
         }
-        [HttpPost("create")]
-        public string Create(Train newTrain)
+        [HttpPost]
+        public void Create(Train newTrain)
         {
-            return _trainManager.AddTrain(newTrain);
+           _trainManager.AddTrain(newTrain);
         }
-        [HttpGet("list")]
+        [HttpGet]
         public List<Train> GetTrainList()
         {
             return _trainManager.GetAllTrains();           

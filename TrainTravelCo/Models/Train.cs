@@ -8,13 +8,12 @@ namespace TrainTravelCo.Models
     public class Train
     {
         private static int _idCounter = 0;
-        public string RegNr { get; set; }
-        public int MaxCapacity { get; set; }
-        public int Id { get; private set; }
+        public string RegNr { get; init; }
+        public int MaxCapacity { get; init; }
+        public int Id { get; init; }
         public Train()
         {
-            this.Id = _idCounter;
-            _idCounter += 1;
+            this.Id = _idCounter++; 
         }
     }
 

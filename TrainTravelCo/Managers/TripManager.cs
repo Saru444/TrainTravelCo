@@ -14,13 +14,14 @@ namespace TrainTravelCo.Managers
         {
             try
             {
+                //Train train =;
                 var transList = dataStore.GetAllTrains().Find(x => x.Id == trainId);
                 var newTrip = new Trip()
                 {
                     Start = start,
                     Destination = destination,
-                    DepartureTime = departureTime,
-                    trainId = trainId
+                    DepartureTime = departureTime,                     
+                    TrainId = trainId
                 };
                 dataStore.AddTrip(newTrip);
             }

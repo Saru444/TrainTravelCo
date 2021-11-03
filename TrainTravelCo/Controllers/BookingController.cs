@@ -6,10 +6,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using TrainTravelCo.Managers;
 using TrainTravelCo.Models;
+using
+using TrainTravelCo.DTO;
 
 namespace TrainTravelCo.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("booking")]
     [ApiController]
     public class BookingController : ControllerBase
     {
@@ -19,10 +21,19 @@ namespace TrainTravelCo.Controllers
             _bookingManager = new BookingManager();
         }
 
-        [HttpGet("search")]
+        [HttpGet]
         public List<Trip> Search(string start)
         {
             return _bookingManager.Search(start);
         }
+        [HttpPost]
+        public void BookTrip (BookTripDTO bookTrip)
+        {
+            BookingManager manager = new BookingManager()
+            {
+                manager.BookTrip(bookTrip)
+            };
+        }
+
     }
 }

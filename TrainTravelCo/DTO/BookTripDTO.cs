@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TrainTravelCo.Models
+namespace TrainTravelCo.DTO
 {
-    public class Customer
+    public class BookTripDTO
     {
-        public string Name { get; init; }
+        public string CustomerName { get; init; }
         public string Tel { get; init; }
     }
 }
