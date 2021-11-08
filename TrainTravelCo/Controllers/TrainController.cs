@@ -10,7 +10,7 @@ using TrainTravelCo.Managers;
 
 namespace TrainTravelCo.Controllers
 {
-    [Route("[controller]")]
+    [Route("train")]
     [ApiController]
     public class TrainController : ControllerBase
     {
@@ -21,14 +21,14 @@ namespace TrainTravelCo.Controllers
             _trainManager = new TrainManager();
         }
         [HttpPost]
-        public void Create(Train newTrain)
+        public Train CreateTrain(Train newTrain)
         {
-           _trainManager.AddTrain(newTrain);
+            return _trainManager.Save(newTrain);
         }
         [HttpGet]
-        public List<Train> GetTrainList()
+        public List<Train> ListTrains()
         {
-            return _trainManager.GetAllTrains();           
+            return _trainManager.List();           
         }
     }
 }

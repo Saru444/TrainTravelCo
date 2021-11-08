@@ -8,6 +8,6 @@ namespace TrainTravelCo.Models
     public class Customer
     {
         public string Name { get; init; }
-        public string Tel { get; init; }
+        public string Phone { get; init; }
     }
 }

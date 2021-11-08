@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using TrainTravelCo.Managers;
 using TrainTravelCo.Models;
-using
 using TrainTravelCo.DTO;
 
 namespace TrainTravelCo.Controllers

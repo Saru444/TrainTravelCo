@@ -33,11 +33,11 @@ namespace TrainTravelCo.Data
 
 
         }
-        public void AddTrain(Train newTrain)
+        public void SaveTrain(Train newTrain)
         {
             _trainList.Add(newTrain);
         }
-        public List<Train> GetAllTrains()
+        public List<Train> ListTrains()
         {
             return _trainList;
         }

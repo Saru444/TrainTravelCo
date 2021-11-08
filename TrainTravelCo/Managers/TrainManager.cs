@@ -11,16 +11,15 @@ namespace TrainTravelCo.Managers
     public class TrainManager
     {
         DataStore dataStore = DataStore.Instance;
-        public void AddTrain(Train newTrain)
+        public Train Save(Train newTrain)
         {
-            dataStore.AddTrain(newTrain);
+            dataStore.SaveTrain(newTrain);
+            return newTrain;
         }
            
-        public List<Train> GetTrain()
-        {
-            
-            return dataStore.GetAllTrains();
-
+        public List<Train> List()
+        {           
+            return dataStore.ListTrains();
         }
 
     }
