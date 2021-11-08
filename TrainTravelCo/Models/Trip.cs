@@ -14,7 +14,7 @@ namespace TrainTravelCo.Models
         public int TrainId { get; init; }
         public int TripId { get; init; }
         public Train train { get; init; }
-        public List<Booking> booking { get; init; }
+        public List<Booking> bookings { get; init; }
         private static int _idCounter = 0;
         public Trip()
         {
