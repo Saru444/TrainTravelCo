@@ -28,10 +28,12 @@ namespace TrainTravelCo.Controllers
         [HttpPost]
         public void BookTrip (BookTripDTO bookTrip)
         {
-            BookingManager manager = new BookingManager()
-            {
-                manager.BookTrip(bookTrip)
-            };
+           
+
+            //BookingManager manager = new BookingManager()
+            //{
+            //    manager.BookTrip(bookTrip)
+            //};
         }
 
     }

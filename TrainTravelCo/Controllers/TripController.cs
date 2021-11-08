@@ -11,7 +11,7 @@ using TrainTravelCo.DTO;
 
 namespace TrainTravelCo.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("trip")]
     [ApiController]   
     public class TripController : ControllerBase
     {
@@ -22,24 +22,25 @@ namespace TrainTravelCo.Controllers
             _tripManager = new TripManager();
         }
         [HttpPost("create")]
-        public Trip Create(TripDTo tripDto)
+        public Trip CreateTrip(TripDTo tripDto)
         {
             string start = tripDto.Start;
             string destination = tripDto.Destination;
             string departureTime = tripDto.DepartureTime;
             int trainId = tripDto.TrainId;
-            Trip trip= _tripManager.AddTrip(trainId, start, destination, departureTime);
+            Trip trip= _tripManager.CreateTrip(start, destination, departureTime,trainId);
             return trip;
         }
         [HttpGet("list")]
-        public List<AvailabelTripDTO> GetTripList()
+        public List<Trip> GetTrips()
         {
-            List<Trip> trips= _tripManager.GetAllTrips();
-            List<AvailabelTripDTO> result = new();
-            foreach (var item in trips)
-            {
+            return _tripManager.ListTrips();
+            //List<Trip> trips= _tripManager.GetAllTrips();
+            //List<AvailabelTripDTO> result = new();
+            //foreach (var item in trips)
+            //{
 
-            }
+            //}
         }
 
     }

@@ -15,13 +15,11 @@ namespace TrainTravelCo.Managers
         {
             dataStore.SaveTrain(newTrain);
             return newTrain;
-        }
-           
+        }           
         public List<Train> List()
         {           
             return dataStore.ListTrains();
         }
-
     }
 
 }

@@ -12,14 +12,14 @@ namespace TrainTravelCo.Models
 
         public string DepartureTime { get; init; }
         public int TrainId { get; init; }
-        public int TripId { get; init; }
+        public int Id { get; init; }
         public Train train { get; init; }
         public List<Booking> bookings { get; init; }
         private static int _idCounter = 0;
         public Trip()
         {
-            this.TripId = _idCounter++;
-            booking = new List<Booking>();
+            this.Id = _idCounter++;
+            bookings = new List<Booking>();
         }
 
 

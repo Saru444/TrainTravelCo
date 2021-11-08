@@ -30,8 +30,6 @@ namespace TrainTravelCo.Data
             _tripList.Add(new Trip { Start = "Hallsberg", Destination = "Stockholm", DepartureTime = "08:10", TrainId = 0 });
             _tripList.Add(new Trip { Start = "Göteborg", Destination = "örebro", DepartureTime = "13:30", TrainId = 1 });
             _tripList.Add(new Trip { Start = "Hallsberg", Destination = "Oslo", DepartureTime = "12:19", TrainId = 3 });
-
-
         }
         public void SaveTrain(Train newTrain)
         {
@@ -41,11 +39,11 @@ namespace TrainTravelCo.Data
         {
             return _trainList;
         }
-        public void AddTrip(Trip trip)
+        public void SaveTrip(Trip trip)
         {
             _tripList.Add(trip);
         }
-        public List<Trip> GetAllTrips()
+        public List<Trip> ListTrips()
         {
             return _tripList;
         }

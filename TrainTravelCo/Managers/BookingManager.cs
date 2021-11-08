@@ -14,21 +14,31 @@ namespace TrainTravelCo.Managers
         DataStore dataStore = DataStore.Instance;
         public List<Trip> Search(string start)
         {
-            var trainsList = dataStore.GetAllTrips().Find(x => x.Start == start);
-            List<Trip> searchList = new();
-            searchList.Add(trainsList);
-            return searchList;
+            var trainsList = dataStore.ListTrips().Find(x => x.Start == start);
+            List<Trip> result = new();
+            result.Add(trainsList);
+            return result;
         }
-        public void BookTrip(int tripId, Customer customer)
+        public void BookTrip(int tripId,string customerName,string customerPhone)
         {
-            var trip = dataStore.GetAllTrips().Find(x => x.TripId == tripId);
+            Customer customer = new Customer()
+            {
+                Name = customerName,
+                Phone = customerPhone
+            };
+            Trip trip = GetTrip(tripId);
             Booking booking = new Booking()
             {
                 Customer = customer,
                 Trip = trip
             };
-            dataStore.AddTrip(trip);
-
+            trip.bookings.Add(booking);
+        }
+        private Trip GetTrip(int tripId)
+        {
+            var trip = dataStore.ListTrips().Find(x => x.Id == tripId);
+            return trip;
+            throw new Exception($"No trip found for Id {tripId}");
         }
     }
 }
